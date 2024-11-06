@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 function App() {
   // State for dark mode
   const [darkMode, setDarkMode] = useState(false);
+  
 
   // Toggle dark mode
   const toggleColorMode = () => setDarkMode(!darkMode);
