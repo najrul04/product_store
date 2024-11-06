@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Pages/Home/Home';
+import CreatePage from './components/Pages/CreatePage/CreatePage';
+import { useState, useEffect } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // State for dark mode
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Toggle dark mode
+  const toggleColorMode = () => setDarkMode(!darkMode);
+
+  // Apply dark mode class to the root element
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className='h-screen dark:bg-gray-900 dark:text-white'>
+      {/* Pass toggleColorMode and darkMode to Navbar */}
+      <Navbar toggleColorMode={toggleColorMode} darkMode={darkMode} />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/createpage' element={<CreatePage />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
