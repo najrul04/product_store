@@ -11,7 +11,7 @@ const Navbar = ({toggleColorMode, darkMode}) => {
   };
   
   return (
-    <div className="max-w mx-auto px-4 py-4 bg-gradient-to-r from-cyan-400 to-blue-500">
+    <div className="max-w mx-auto px-4 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg">
       <div className="flex flex-col sm:flex-row items-center justify-between h-16 space-y-4 sm:space-y-0 ">
         <h1 className="text-2xl sm:text-3xl font-bold uppercase text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-500">
           <Link to="/">Product Store 🛒</Link>
@@ -19,12 +19,12 @@ const Navbar = ({toggleColorMode, darkMode}) => {
 
         <div className="flex items-center space-x-4">
           <Link to="/createpage">
-            <button className="p-2 text-gray-600 dark:text-gray-200 hover:text-blue-500 rounded transition-all">
+            <button className="p-2 text-gray-600 dark:text-gray-200 hover:hover:text-white rounded transition-all">
               <CiSquarePlus className="text-xl" />
             </button>
           </Link>
 
-          <button onClick={toggleColorMode} className="p-2 text-gray-600 dark:text-gray-200 hover:text-blue-500 rounded transition-all">
+          <button onClick={toggleColorMode} className="p-2 text-gray-600 dark:text-gray-200 hover:text-white rounded transition-all">
             {darkMode ? <LuSun size={20} /> : <IoMoon size={20} />}
           </button>
         </div>
