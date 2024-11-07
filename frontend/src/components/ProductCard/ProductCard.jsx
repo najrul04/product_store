@@ -1,6 +1,8 @@
 import { useProductStore } from "./../../store/product";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { FaEdit } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa6";
 
 const ProductCard = ({ product }) => {
 	const [updatedProduct, setUpdatedProduct] = useState(product);
@@ -34,15 +36,15 @@ const ProductCard = ({ product }) => {
 				<div className="flex space-x-2">
 					<button
 						onClick={() => setIsModalOpen(true)}
-						className="text-white bg-blue-500 p-2 rounded-full hover:bg-blue-600"
+						className="inline-flex items-center text-white bg-blue-500 p-2 rounded-full hover:bg-blue-600"
 					>
-						✏️ Edit
+						<FaEdit className="my-1.5 mx-1.5"/> Edit
 					</button>
 					<button
 						onClick={() => handleDeleteProduct(product._id)}
-						className="text-white bg-red-500 p-2 rounded-full hover:bg-red-600"
+						className="inline-flex items-center text-white bg-red-500 p-2 rounded-full hover:bg-red-600 space-x-2"
 					>
-						🗑️ Delete
+						<FaTrash className="my-1.5 mx-1.5"/> Delete
 					</button>
 				</div>
 			</div>
