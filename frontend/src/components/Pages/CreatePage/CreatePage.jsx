@@ -27,7 +27,7 @@ const CreatePage = () => {
   return (
     <div className="max-w-lg mx-auto p-4">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold">Create New Product</h1>
+        <h1 className="text-4xl font-bold">Create a New Product</h1>
       </div>
 
       <div className="bg-gradient-to-r from-cyan-400 to-blue-500 dark:bg-gray-800 p-6 rounded-lg shadow-md">
