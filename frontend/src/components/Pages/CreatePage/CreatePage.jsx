@@ -17,7 +17,6 @@ const CreatePage = () => {
     // Reset product fields after addition
     setNewProduct({ name: "", price: "", image: "" });
 
-    // Optionally, you can handle success/failure using alerts or other methods
     if (!success) {
       alert(`Error: ${message}`);
     } else {
@@ -31,7 +30,7 @@ const CreatePage = () => {
         <h1 className="text-4xl font-bold">Create New Product</h1>
       </div>
 
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <div className="bg-gradient-to-r from-cyan-400 to-blue-500 dark:bg-gray-800 p-6 rounded-lg shadow-md">
         <div className="space-y-4">
           <input
             type="text"
@@ -39,7 +38,7 @@ const CreatePage = () => {
             name="name"
             value={newProduct.name}
             onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-900 rounded-lg focus:outline-none focus:border-blue-500 text-gray-900 dark:text-gray-900"
           />
           <input
             type="number"
@@ -47,7 +46,7 @@ const CreatePage = () => {
             name="price"
             value={newProduct.price}
             onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-900 rounded-lg focus:outline-none focus:border-blue-500 text-gray-900 dark:text-gray-900"
           />
           <input
             type="text"
@@ -55,7 +54,7 @@ const CreatePage = () => {
             name="image"
             value={newProduct.image}
             onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full p-3 border border-gray-900 rounded-lg focus:outline-none focus:border-blue-500 text-gray-900 dark:text-gray-900"
           />
 
           <button

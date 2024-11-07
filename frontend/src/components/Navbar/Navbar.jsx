@@ -11,8 +11,8 @@ const Navbar = ({toggleColorMode, darkMode}) => {
   };
   
   return (
-    <div className="max-w-7xl mx-auto px-4 py-4 bg-gradient-to-r from-cyan-400 to-blue-500">
-      <div className="flex flex-col sm:flex-row items-center justify-between h-16 space-y-4 sm:space-y-0">
+    <div className="max-w mx-auto px-4 py-4 bg-gradient-to-r from-cyan-400 to-blue-500">
+      <div className="flex flex-col sm:flex-row items-center justify-between h-16 space-y-4 sm:space-y-0 ">
         <h1 className="text-2xl sm:text-3xl font-bold uppercase text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-800 to-blue-500">
           <Link to="/">Product Store 🛒</Link>
         </h1>

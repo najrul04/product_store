@@ -1,6 +1,6 @@
 import { useProductStore } from "./../../store/product";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ProductCard = ({ product }) => {
 	const [updatedProduct, setUpdatedProduct] = useState(product);
@@ -101,6 +101,16 @@ const ProductCard = ({ product }) => {
 			)}
 		</div>
 	);
+};
+
+// Define PropTypes for ProductCard
+ProductCard.propTypes = {
+	product: PropTypes.shape({
+		_id: PropTypes.string.isRequired,
+		name: PropTypes.string.isRequired,
+		price: PropTypes.number.isRequired,
+		image: PropTypes.string.isRequired,
+	}).isRequired,
 };
 
 export default ProductCard;
